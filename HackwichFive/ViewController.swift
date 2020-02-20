@@ -24,18 +24,23 @@ class ViewController: UIViewController {
         self.firstLabel.text = "My Favorite Foods"
         
     }
-
+//Lists through the array of foods
     @IBAction func buttonPressed(_ sender: Any)
-    
+    //specifies which food to show
     {
         self.secondLabel.text = favoriteFoodArray[currentIndex]
+        //moves up the array if the current number is less than total food items in the array
         if self.currentIndex < self.favoriteFoodArray.count
+       
         {
+            //specifies how far to move up the array
             currentIndex+=1
+            //changes button label upon press
             buttonLabel.setTitle("Next", for: UIControl.State.normal)
         }
+        
         else {
-            
+            //Disables button at the end of the array
             (sender as! UIButton).isEnabled = false
             
             
